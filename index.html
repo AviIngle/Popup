@@ -3,17 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Custom Popup on Link Click</title>
+    <title>Custom Popup with Social Icons and Contact Info</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
 </head>
 <body>
-    <a href="https://example.com?popup=true" id="shareableLink">Share this link</a>
+    <a href="?popup=true" id="shareableLink">Share this link</a>
 
     <div id="popup" class="popup">
         <div class="popup-content">
             <span class="close">&times;</span>
-            <h2>Popup Content</h2>
-            <p>This is a custom popup that appears when you click the shared link.</p>
+            <h2>Contact Information</h2>
+            <p>You can reach us via the following methods:</p>
+            <div class="contact-info">
+                <p>Email: contact@example.com</p>
+                <p>Phone: +123 456 7890</p>
+            </div>
+            <div class="social-icons">
+                <a href="https://facebook.com" target="_blank" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://twitter.com" target="_blank" class="social-icon"><i class="fab fa-twitter"></i></a>
+                <a href="https://linkedin.com" target="_blank" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
+                <a href="https://instagram.com" target="_blank" class="social-icon"><i class="fab fa-instagram"></i></a>
+            </div>
         </div>
     </div>
 
