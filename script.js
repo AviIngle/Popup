@@ -10,20 +10,27 @@ document.addEventListener('DOMContentLoaded', function() {
         return results === null ? '' : decodeURIComponent(results[1].replace(/\+/g, ' '));
     }
 
+    // Function to show the popup
+    function showPopup() {
+        popup.style.display = 'block';
+    }
+
     // Check if the 'popup' parameter is present in the URL
     if (getUrlParameter('popup') === 'true') {
-        popup.style.display = 'block';
+        showPopup();
     }
 
     // Close the popup when the close button is clicked
     closeBtn.onclick = function() {
         popup.style.display = 'none';
+        setTimeout(showPopup, 1000); // Reopen the popup after 2 seconds
     }
 
     // Close the popup when clicking outside of the popup content
     window.onclick = function(event) {
         if (event.target == popup) {
             popup.style.display = 'none';
+            setTimeout(showPopup, 1000); // Reopen the popup after 2 seconds
         }
     }
 
@@ -34,6 +41,7 @@ document.addEventListener('DOMContentLoaded', function() {
         var newUrl = new URL(window.location.href);
         newUrl.searchParams.set('popup', 'true');
         window.history.pushState({}, '', newUrl);
-        popup.style.display = 'block';
+        showPopup();
     }
 });
+
